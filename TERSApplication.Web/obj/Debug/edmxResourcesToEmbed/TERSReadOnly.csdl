@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrainingEventRegistrationModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="TrainingEventRegistrationEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EventReadOnlyBindables" EntityType="TrainingEventRegistrationModel1.EventReadOnlyBindable" />
+    <EntitySet Name="vwEmployees" EntityType="TrainingEventRegistrationModel1.vwEmployee" />
+  </EntityContainer>
+  <EntityType Name="EventReadOnlyBindable">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Type="Int32" Name="EventID" Nullable="false" />
+    <Property Type="String" Name="EventName" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FullName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Branch" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OrgLevel5" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgLevel4" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgLevel3" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgLevel2" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgNo" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OfficeCode" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeType" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title" MaxLength="38" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NetworkID" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,27 @@
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\bin\TERSApplication.Web.dll
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\bin\TERSApplication.Web.pdb
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.Resources.ErrorResources.resources
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.Resources.RegistrationDataResources.resources
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.dll
+C:\Users\jchynoweth7\Documents\Visual Studio 2010\Projects\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.pdb
+C:\Develop\TERSApplication\TERSApplication.Web\bin\TERSApplication.Web.dll
+C:\Develop\TERSApplication\TERSApplication.Web\bin\TERSApplication.Web.pdb
+C:\Develop\TERSApplication\TERSApplication.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Develop\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.Resources.ErrorResources.resources
+C:\Develop\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.Resources.RegistrationDataResources.resources
+C:\Develop\TERSApplication\TERSApplication.Web\obj\Debug\GenerateResource.read.1.tlog
+C:\Develop\TERSApplication\TERSApplication.Web\obj\Debug\GenerateResource.write.1.tlog
+C:\Develop\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.dll
+C:\Develop\TERSApplication\TERSApplication.Web\obj\Debug\TERSApplication.Web.pdb
+C:\Develop\TERSAppV2\TERSApplication.Web\bin\TERSApplication.Web.dll
+C:\Develop\TERSAppV2\TERSApplication.Web\bin\TERSApplication.Web.pdb
+C:\Develop\TERSAppV2\TERSApplication.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Develop\TERSAppV2\TERSApplication.Web\obj\Debug\TERSApplication.Web.Resources.ErrorResources.resources
+C:\Develop\TERSAppV2\TERSApplication.Web\obj\Debug\TERSApplication.Web.Resources.RegistrationDataResources.resources
+C:\Develop\TERSAppV2\TERSApplication.Web\obj\Debug\GenerateResource.read.1.tlog
+C:\Develop\TERSAppV2\TERSApplication.Web\obj\Debug\GenerateResource.write.1.tlog
+C:\Develop\TERSAppV2\TERSApplication.Web\obj\Debug\TERSApplication.Web.dll
+C:\Develop\TERSAppV2\TERSApplication.Web\obj\Debug\TERSApplication.Web.pdb

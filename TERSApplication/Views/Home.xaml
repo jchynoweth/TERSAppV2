@@ -1,0 +1,42 @@
+﻿<navigation:Page
+  x:Class="TERSApplication.Home"
+    xmlns:my1="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+  mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+  Style="{StaticResource PageStyle}" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Ria" xmlns:my="clr-namespace:TERSApplication.Web.Services" xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls">
+
+    <Grid x:Name="LayoutRoot" Margin="32, 32, 32, 32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition   />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}"
+                           Text="{Binding Path=ApplicationStrings.HomePageTitle, Source={StaticResource ResourceWrapper}}" Margin="0,15,0,0" Height="39" VerticalAlignment="Top" Grid.Row="0"  />
+
+
+
+        <StackPanel x:Name="ContentStackPanel" Style="{StaticResource ContentStackPanelStyle}" Margin="0,14,0,0" Grid.Row="1" Background="#f1f7fe">
+            <StackPanel  Margin="22,12,12,12">
+                <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}"
+                           Text="Training and Event Registration System (TERS) allows CFTC users to invite people to a group of occurrences or to post a public invite for all users. All CFTC users can go to the CFTC user section to view and sign up for the public Occurrences and one that they have been invited to."   Margin="0,2,0,20"   />
+                <TextBlock x:Name="ContentText2" Style="{StaticResource ContentTextStyle}"
+                           Text="xxx If you have been given administrative privileges, you can navigate to the “Create Events” section. In addition to creating Events, admin users can take attendance of their Occurrences and create reports. If a user does not have administration privileges, the only section you will see is Sign up for Event Occurrences."   Margin="0,2,0,0"   />
+                <my1:Label  HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Content="Administration Section – Manage Events"  ></my1:Label>
+                <TextBlock x:Name="ContentText3" Style="{StaticResource ContentTextStyle}"
+                           Text="mm"   Margin="0,2,0,0"   />
+                <Button x:Name="btnManageEvent" Height="28" Width="169" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Go to Administration Section"></Button>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+    </Grid>
+
+</navigation:Page>

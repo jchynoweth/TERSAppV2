@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrainingEventRegistrationModel1StoreContainer" CdmEntityContainer="TrainingEventRegistrationEntities1">
+    <EntitySetMapping Name="vwEmployees">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel1.vwEmployee">
+        <MappingFragment StoreEntitySet="vwEmployee">
+          <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+          <ScalarProperty Name="OfficeCode" ColumnName="OfficeCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="OrgNo" ColumnName="OrgNo" />
+          <ScalarProperty Name="OrgLevel2" ColumnName="OrgLevel2" />
+          <ScalarProperty Name="OrgLevel3" ColumnName="OrgLevel3" />
+          <ScalarProperty Name="OrgLevel4" ColumnName="OrgLevel4" />
+          <ScalarProperty Name="OrgLevel5" ColumnName="OrgLevel5" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventReadOnlyBindables">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainingEventRegistrationModel1.EventReadOnlyBindable)">
+        <MappingFragment StoreEntitySet="TrainingEvent">
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

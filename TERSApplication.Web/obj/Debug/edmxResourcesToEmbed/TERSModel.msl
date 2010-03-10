@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrainingEventRegistrationModelStoreContainer" CdmEntityContainer="TrainingEventRegistrationEntities">
+    <EntitySetMapping Name="AdGroups">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.AdGroup">
+        <MappingFragment StoreEntitySet="AdGroup">
+          <ScalarProperty Name="ADGroupID" ColumnName="ADGroupID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ParentGroupID" ColumnName="ParentGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADGroupEmployees">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.ADGroupEmployee">
+        <MappingFragment StoreEntitySet="ADGroupEmployee">
+          <ScalarProperty Name="ADGroupID" ColumnName="ADGroupID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Catalogs">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.Catalog">
+        <MappingFragment StoreEntitySet="Catalog">
+          <ScalarProperty Name="CatalogID" ColumnName="CatalogID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MaxAttend" ColumnName="MaxAttend" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="OrgNo" ColumnName="OrgNo" />
+          <ScalarProperty Name="ShowVideoConf" ColumnName="ShowVideoConf" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+          <ScalarProperty Name="CatalogName" ColumnName="CatalogName" />
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="ReminderSubject" ColumnName="ReminderSubject" />
+          <ScalarProperty Name="ReminderBody" ColumnName="ReminderBody" />
+          <ScalarProperty Name="DaysBeforeSendingReminderTemplate" ColumnName="DaysBeforeSendingReminderTemplate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Modifydate" ColumnName="Modifydate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employeesignups">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.Employeesignup">
+        <MappingFragment StoreEntitySet="Employeesignup">
+          <ScalarProperty Name="EmployeeSignupID" ColumnName="EmployeeSignupID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="OccurrenceID" ColumnName="OccurrenceID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="HasAttended" ColumnName="HasAttended" />
+          <ScalarProperty Name="CalendarID" ColumnName="CalendarID" />
+          <ScalarProperty Name="CalendarChangeKey" ColumnName="CalendarChangeKey" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ReminderSent" ColumnName="ReminderSent" />
+          <ScalarProperty Name="ReminderSentDate" ColumnName="ReminderSentDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventTypes">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.EventType">
+        <MappingFragment StoreEntitySet="EventType">
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExchangeEventLogs">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.ExchangeEventLog">
+        <MappingFragment StoreEntitySet="ExchangeEventLog">
+          <ScalarProperty Name="ExchangeEventLogID" ColumnName="ExchangeEventLogID" />
+          <ScalarProperty Name="EventMessage" ColumnName="EventMessage" />
+          <ScalarProperty Name="SubscriptionId" ColumnName="SubscriptionId" />
+          <ScalarProperty Name="WaterMark" ColumnName="WaterMark" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvitedEmails">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.InvitedEmail">
+        <MappingFragment StoreEntitySet="InvitedEmail">
+          <ScalarProperty Name="InvitedEmailID" ColumnName="InvitedEmailID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="InviteSent" ColumnName="InviteSent" />
+          <ScalarProperty Name="InviteDone" ColumnName="InviteDone" />
+          <ScalarProperty Name="InviteSentDate" ColumnName="InviteSentDate" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvitedEmployees">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.InvitedEmployee">
+        <MappingFragment StoreEntitySet="InvitedEmployee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="InvitedEmployeeID" ColumnName="InvitedEmployeeID" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InviteEmailAttachments">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.InviteEmailAttachment">
+        <MappingFragment StoreEntitySet="InviteEmailAttachment">
+          <ScalarProperty Name="InviteEmailAttachmentID" ColumnName="InviteEmailAttachmentID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="DateUplaoded" ColumnName="DateUplaoded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Occurrences">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.Occurrence">
+        <MappingFragment StoreEntitySet="Occurrence">
+          <ScalarProperty Name="OccurrenceID" ColumnName="OccurrenceID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MaxAttend" ColumnName="MaxAttend" />
+          <ScalarProperty Name="ScheduleFrom" ColumnName="ScheduleFrom" />
+          <ScalarProperty Name="ScheduleTo" ColumnName="ScheduleTo" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="CreatedByEmpID" ColumnName="CreatedByEmpID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="OrgNo" ColumnName="OrgNo" />
+          <ScalarProperty Name="ShowVideoConf" ColumnName="ShowVideoConf" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="OccurrenceName" ColumnName="OccurrenceName" />
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="ConversionScheduleID" ColumnName="ConversionScheduleID" />
+          <ScalarProperty Name="ConversionInstructorID" ColumnName="ConversionInstructorID" />
+          <ScalarProperty Name="Recurrence" ColumnName="Recurrence" />
+          <ScalarProperty Name="IsAllDay" ColumnName="IsAllDay" />
+          <ScalarProperty Name="ReminderSubject" ColumnName="ReminderSubject" />
+          <ScalarProperty Name="ReminderBody" ColumnName="ReminderBody" />
+          <ScalarProperty Name="DaysBeforeSendingReminder" ColumnName="DaysBeforeSendingReminder" />
+          <ScalarProperty Name="CatalogID" ColumnName="CatalogID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OccurrenceReminderEmailAttachments">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.OccurrenceReminderEmailAttachment">
+        <MappingFragment StoreEntitySet="OccurrenceReminderEmailAttachment">
+          <ScalarProperty Name="OccurrenceReminderEmailAttachmentID" ColumnName="OccurrenceReminderEmailAttachmentID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+          <ScalarProperty Name="OccurrenceID" ColumnName="OccurrenceID" />
+          <ScalarProperty Name="DateUplaoded" ColumnName="DateUplaoded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programs">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.Program">
+        <MappingFragment StoreEntitySet="Program">
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+          <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ProgramDescription" ColumnName="ProgramDescription" />
+          <ScalarProperty Name="CCEmail" ColumnName="CCEmail" />
+          <ScalarProperty Name="OfficeCode" ColumnName="OfficeCode" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="TimeZoneID" ColumnName="TimeZoneID" />
+          <ScalarProperty Name="RegionFullName" ColumnName="RegionFullName" />
+          <ScalarProperty Name="TimeZoneName" ColumnName="TimeZoneName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainingEvents">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainingEventRegistrationModel.TrainingEvent)">
+        <MappingFragment StoreEntitySet="TrainingEvent">
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="DaysBeforeSendingInvite" ColumnName="DaysBeforeSendingInvite" />
+          <ScalarProperty Name="InviteEmailBody" ColumnName="InviteEmailBody" />
+          <ScalarProperty Name="InviteEmailSubject" ColumnName="InviteEmailSubject" />
+          <ScalarProperty Name="OrgNo" ColumnName="OrgNo" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EmailSent" ColumnName="EmailSent" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwEmployees">
+      <EntityTypeMapping TypeName="TrainingEventRegistrationModel.vwEmployee">
+        <MappingFragment StoreEntitySet="vwEmployee">
+          <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+          <ScalarProperty Name="OfficeCode" ColumnName="OfficeCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="OrgNo" ColumnName="OrgNo" />
+          <ScalarProperty Name="OrgLevel2" ColumnName="OrgLevel2" />
+          <ScalarProperty Name="OrgLevel3" ColumnName="OrgLevel3" />
+          <ScalarProperty Name="OrgLevel4" ColumnName="OrgLevel4" />
+          <ScalarProperty Name="OrgLevel5" ColumnName="OrgLevel5" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

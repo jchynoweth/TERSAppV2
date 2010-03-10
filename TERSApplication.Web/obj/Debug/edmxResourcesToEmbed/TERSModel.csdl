@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrainingEventRegistrationModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="TrainingEventRegistrationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdGroups" EntityType="TrainingEventRegistrationModel.AdGroup" />
+    <EntitySet Name="ADGroupEmployees" EntityType="TrainingEventRegistrationModel.ADGroupEmployee" />
+    <EntitySet Name="Catalogs" EntityType="TrainingEventRegistrationModel.Catalog" />
+    <EntitySet Name="Contacts" EntityType="TrainingEventRegistrationModel.Contact" />
+    <EntitySet Name="Employeesignups" EntityType="TrainingEventRegistrationModel.Employeesignup" />
+    <EntitySet Name="EventTypes" EntityType="TrainingEventRegistrationModel.EventType" />
+    <EntitySet Name="ExchangeEventLogs" EntityType="TrainingEventRegistrationModel.ExchangeEventLog" />
+    <EntitySet Name="InvitedEmails" EntityType="TrainingEventRegistrationModel.InvitedEmail" />
+    <EntitySet Name="InvitedEmployees" EntityType="TrainingEventRegistrationModel.InvitedEmployee" />
+    <EntitySet Name="InviteEmailAttachments" EntityType="TrainingEventRegistrationModel.InviteEmailAttachment" />
+    <EntitySet Name="Occurrences" EntityType="TrainingEventRegistrationModel.Occurrence" />
+    <EntitySet Name="OccurrenceReminderEmailAttachments" EntityType="TrainingEventRegistrationModel.OccurrenceReminderEmailAttachment" />
+    <EntitySet Name="Programs" EntityType="TrainingEventRegistrationModel.Program" />
+    <EntitySet Name="Regions" EntityType="TrainingEventRegistrationModel.Region" />
+    <EntitySet Name="TrainingEvents" EntityType="TrainingEventRegistrationModel.TrainingEvent" />
+    <AssociationSet Name="FK_AdGroup_AdGroup" Association="TrainingEventRegistrationModel.FK_AdGroup_AdGroup">
+      <End Role="AdGroup" EntitySet="AdGroups" />
+      <End Role="AdGroup1" EntitySet="AdGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ADGroupEmployee_AdGroup" Association="TrainingEventRegistrationModel.FK_ADGroupEmployee_AdGroup">
+      <End Role="AdGroup" EntitySet="AdGroups" />
+      <End Role="ADGroupEmployee" EntitySet="ADGroupEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Catalog_Program" Association="TrainingEventRegistrationModel.FK_Catalog_Program">
+      <End Role="Program" EntitySet="Programs" />
+      <End Role="Catalog" EntitySet="Catalogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Program" Association="TrainingEventRegistrationModel.FK_Contact_Program">
+      <End Role="Program" EntitySet="Programs" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employeesignup_Occurrence" Association="TrainingEventRegistrationModel.FK_Employeesignup_Occurrence">
+      <End Role="Occurrence" EntitySet="Occurrences" />
+      <End Role="Employeesignup" EntitySet="Employeesignups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Occurrence_EventType" Association="TrainingEventRegistrationModel.FK_Occurrence_EventType">
+      <End Role="EventType" EntitySet="EventTypes" />
+      <End Role="Occurrence" EntitySet="Occurrences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvitedEmail_TrainingEvent" Association="TrainingEventRegistrationModel.FK_InvitedEmail_TrainingEvent">
+      <End Role="TrainingEvent" EntitySet="TrainingEvents" />
+      <End Role="InvitedEmail" EntitySet="InvitedEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvitedEmployee_TrainingEvent" Association="TrainingEventRegistrationModel.FK_InvitedEmployee_TrainingEvent">
+      <End Role="TrainingEvent" EntitySet="TrainingEvents" />
+      <End Role="InvitedEmployee" EntitySet="InvitedEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InviteEmailAttachment_TrainingEvent" Association="TrainingEventRegistrationModel.FK_InviteEmailAttachment_TrainingEvent">
+      <End Role="TrainingEvent" EntitySet="TrainingEvents" />
+      <End Role="InviteEmailAttachment" EntitySet="InviteEmailAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Occurrence_Region" Association="TrainingEventRegistrationModel.FK_Occurrence_Region">
+      <End Role="Region" EntitySet="Regions" />
+      <End Role="Occurrence" EntitySet="Occurrences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Occurrence_TrainingEvent" Association="TrainingEventRegistrationModel.FK_Occurrence_TrainingEvent">
+      <End Role="TrainingEvent" EntitySet="TrainingEvents" />
+      <End Role="Occurrence" EntitySet="Occurrences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OccurrenceReminderEmailAttachment_Occurrence" Association="TrainingEventRegistrationModel.FK_OccurrenceReminderEmailAttachment_Occurrence">
+      <End Role="Occurrence" EntitySet="Occurrences" />
+      <End Role="OccurrenceReminderEmailAttachment" EntitySet="OccurrenceReminderEmailAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrainingEvent_Program" Association="TrainingEventRegistrationModel.FK_TrainingEvent_Program">
+      <End Role="Program" EntitySet="Programs" />
+      <End Role="TrainingEvent" EntitySet="TrainingEvents" />
+    </AssociationSet>
+    <EntitySet Name="vwEmployees" EntityType="TrainingEventRegistrationModel.vwEmployee" />
+    <AssociationSet Name="vwEmployeeTrainingEvent" Association="TrainingEventRegistrationModel.vwEmployeeTrainingEvent">
+      <End Role="vwEmployee" EntitySet="vwEmployees" />
+      <End Role="TrainingEvent" EntitySet="TrainingEvents" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdGroup">
+    <Key>
+      <PropertyRef Name="ADGroupID" />
+    </Key>
+    <Property Name="ADGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="RegionID" Type="Int32" Nullable="false" />
+    <Property Name="Members" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ParentGroupID" Type="Int32" />
+    <NavigationProperty Name="AdGroup1" Relationship="TrainingEventRegistrationModel.FK_AdGroup_AdGroup" FromRole="AdGroup" ToRole="AdGroup1" />
+    <NavigationProperty Name="AdGroup2" Relationship="TrainingEventRegistrationModel.FK_AdGroup_AdGroup" FromRole="AdGroup1" ToRole="AdGroup" />
+    <NavigationProperty Name="ADGroupEmployees" Relationship="TrainingEventRegistrationModel.FK_ADGroupEmployee_AdGroup" FromRole="AdGroup" ToRole="ADGroupEmployee" />
+  </EntityType>
+  <EntityType Name="ADGroupEmployee">
+    <Key>
+      <PropertyRef Name="ADGroupID" />
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="ADGroupID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AdGroup" Relationship="TrainingEventRegistrationModel.FK_ADGroupEmployee_AdGroup" FromRole="ADGroupEmployee" ToRole="AdGroup" />
+  </EntityType>
+  <EntityType Name="Catalog">
+    <Key>
+      <PropertyRef Name="CatalogID" />
+    </Key>
+    <Property Name="CatalogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MaxAttend" Type="Int32" />
+    <Property Name="LocationName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <Property Name="OrgNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ShowVideoConf" Type="Boolean" />
+    <Property Name="ProgramID" Type="Int32" Nullable="false" />
+    <Property Name="CatalogName" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="EventTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Region" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="ReminderSubject" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ReminderBody" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="DaysBeforeSendingReminderTemplate" Type="Int32" />
+    <NavigationProperty Name="Program" Relationship="TrainingEventRegistrationModel.FK_Catalog_Program" FromRole="Catalog" ToRole="Program" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" Unicode="true" FixedLength="true" />
+    <Property Name="ProgramID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="Modifydate" Type="DateTime" />
+    <NavigationProperty Name="Program" Relationship="TrainingEventRegistrationModel.FK_Contact_Program" FromRole="Contact" ToRole="Program" />
+  </EntityType>
+  <EntityType Name="Employeesignup">
+    <Key>
+      <PropertyRef Name="EmployeeSignupID" />
+    </Key>
+    <Property Name="EmployeeSignupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="OccurrenceID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <Property Name="HasAttended" Type="Boolean" Nullable="false" />
+    <Property Name="CalendarID" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CalendarChangeKey" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ReminderSent" Type="Boolean" Nullable="false" />
+    <Property Name="ReminderSentDate" Type="DateTime" />
+    <NavigationProperty Name="Occurrence" Relationship="TrainingEventRegistrationModel.FK_Employeesignup_Occurrence" FromRole="Employeesignup" ToRole="Occurrence" />
+  </EntityType>
+  <EntityType Name="EventType">
+    <Key>
+      <PropertyRef Name="EventTypeID" />
+    </Key>
+    <Property Name="EventTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <NavigationProperty Name="Occurrences" Relationship="TrainingEventRegistrationModel.FK_Occurrence_EventType" FromRole="EventType" ToRole="Occurrence" />
+  </EntityType>
+  <EntityType Name="ExchangeEventLog">
+    <Key>
+      <PropertyRef Name="ExchangeEventLogID" />
+    </Key>
+    <Property Name="ExchangeEventLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="SubscriptionId" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="WaterMark" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="DateLogged" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="InvitedEmail">
+    <Key>
+      <PropertyRef Name="InvitedEmailID" />
+    </Key>
+    <Property Name="InvitedEmailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="EventID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <Property Name="InviteSent" Type="Boolean" Nullable="false" />
+    <Property Name="InviteDone" Type="Boolean" Nullable="false" />
+    <Property Name="InviteSentDate" Type="DateTime" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <NavigationProperty Name="TrainingEvent" Relationship="TrainingEventRegistrationModel.FK_InvitedEmail_TrainingEvent" FromRole="InvitedEmail" ToRole="TrainingEvent" />
+  </EntityType>
+  <EntityType Name="InvitedEmployee">
+    <Key>
+      <PropertyRef Name="InvitedEmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="InvitedEmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventID" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <NavigationProperty Name="TrainingEvent" Relationship="TrainingEventRegistrationModel.FK_InvitedEmployee_TrainingEvent" FromRole="InvitedEmployee" ToRole="TrainingEvent" />
+  </EntityType>
+  <EntityType Name="InviteEmailAttachment">
+    <Key>
+      <PropertyRef Name="InviteEmailAttachmentID" />
+    </Key>
+    <Property Name="InviteEmailAttachmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="FileContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="EventID" Type="Int32" Nullable="false" />
+    <Property Name="DateUplaoded" Type="DateTime" />
+    <NavigationProperty Name="TrainingEvent" Relationship="TrainingEventRegistrationModel.FK_InviteEmailAttachment_TrainingEvent" FromRole="InviteEmailAttachment" ToRole="TrainingEvent" />
+  </EntityType>
+  <EntityType Name="Occurrence">
+    <Key>
+      <PropertyRef Name="OccurrenceID" />
+    </Key>
+    <Property Name="OccurrenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MaxAttend" Type="Int32" />
+    <Property Name="ScheduleFrom" Type="DateTime" Nullable="false" />
+    <Property Name="ScheduleTo" Type="DateTime" />
+    <Property Name="LocationName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedByEmpID" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <Property Name="OrgNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ShowVideoConf" Type="Boolean" />
+    <Property Name="EventID" Type="Int32" Nullable="false" />
+    <Property Name="OccurrenceName" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="EventTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ConversionScheduleID" Type="Int32" />
+    <Property Name="ConversionInstructorID" Type="Int32" />
+    <Property Name="Recurrence" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="IsAllDay" Type="Boolean" />
+    <Property Name="ReminderSubject" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ReminderBody" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="DaysBeforeSendingReminder" Type="Int32" />
+    <Property Name="CatalogID" Type="Int32" />
+    <Property Name="RegionID" Type="Int32" />
+    <NavigationProperty Name="Employeesignups" Relationship="TrainingEventRegistrationModel.FK_Employeesignup_Occurrence" FromRole="Occurrence" ToRole="Employeesignup" />
+    <NavigationProperty Name="EventType" Relationship="TrainingEventRegistrationModel.FK_Occurrence_EventType" FromRole="Occurrence" ToRole="EventType" />
+    <NavigationProperty Name="Region" Relationship="TrainingEventRegistrationModel.FK_Occurrence_Region" FromRole="Occurrence" ToRole="Region" />
+    <NavigationProperty Name="TrainingEvent" Relationship="TrainingEventRegistrationModel.FK_Occurrence_TrainingEvent" FromRole="Occurrence" ToRole="TrainingEvent" />
+    <NavigationProperty Name="OccurrenceReminderEmailAttachments" Relationship="TrainingEventRegistrationModel.FK_OccurrenceReminderEmailAttachment_Occurrence" FromRole="Occurrence" ToRole="OccurrenceReminderEmailAttachment" />
+  </EntityType>
+  <EntityType Name="OccurrenceReminderEmailAttachment">
+    <Key>
+      <PropertyRef Name="OccurrenceReminderEmailAttachmentID" />
+    </Key>
+    <Property Name="OccurrenceReminderEmailAttachmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="FileContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="OccurrenceID" Type="Int32" Nullable="false" />
+    <Property Name="DateUplaoded" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Occurrence" Relationship="TrainingEventRegistrationModel.FK_OccurrenceReminderEmailAttachment_Occurrence" FromRole="OccurrenceReminderEmailAttachment" ToRole="Occurrence" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="ProgramID" />
+    </Key>
+    <Property Name="ProgramID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <Property Name="ProgramDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CCEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OfficeCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+    <Property Name="Division" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ModifyBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Catalogs" Relationship="TrainingEventRegistrationModel.FK_Catalog_Program" FromRole="Program" ToRole="Catalog" />
+    <NavigationProperty Name="Contacts" Relationship="TrainingEventRegistrationModel.FK_Contact_Program" FromRole="Program" ToRole="Contact" />
+    <NavigationProperty Name="TrainingEvents" Relationship="TrainingEventRegistrationModel.FK_TrainingEvent_Program" FromRole="Program" ToRole="TrainingEvent" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegionName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TimeZoneID" Type="Int32" Nullable="false" />
+    <Property Name="RegionFullName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TimeZoneName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Occurrences" Relationship="TrainingEventRegistrationModel.FK_Occurrence_Region" FromRole="Region" ToRole="Occurrence" />
+  </EntityType>
+  <EntityType Name="TrainingEvent">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ModifyDate" Type="DateTime" />
+    <Property Name="IsPublic" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="EmailSent" Type="Boolean" />
+    <Property Name="EventName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="ModifyBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OrgNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="InviteEmailSubject" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="InviteEmailBody" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="DaysBeforeSendingInvite" Type="Int32" />
+    <NavigationProperty Name="InvitedEmails" Relationship="TrainingEventRegistrationModel.FK_InvitedEmail_TrainingEvent" FromRole="TrainingEvent" ToRole="InvitedEmail" />
+    <NavigationProperty Name="InvitedEmployees" Relationship="TrainingEventRegistrationModel.FK_InvitedEmployee_TrainingEvent" FromRole="TrainingEvent" ToRole="InvitedEmployee" />
+    <NavigationProperty Name="InviteEmailAttachments" Relationship="TrainingEventRegistrationModel.FK_InviteEmailAttachment_TrainingEvent" FromRole="TrainingEvent" ToRole="InviteEmailAttachment" />
+    <NavigationProperty Name="Occurrences" Relationship="TrainingEventRegistrationModel.FK_Occurrence_TrainingEvent" FromRole="TrainingEvent" ToRole="Occurrence" />
+    <NavigationProperty Name="Program" Relationship="TrainingEventRegistrationModel.FK_TrainingEvent_Program" FromRole="TrainingEvent" ToRole="Program" />
+    <NavigationProperty Name="vwEmployee" Relationship="TrainingEventRegistrationModel.vwEmployeeTrainingEvent" FromRole="TrainingEvent" ToRole="vwEmployee" />
+  </EntityType>
+  <Association Name="FK_AdGroup_AdGroup">
+    <End Role="AdGroup" Type="TrainingEventRegistrationModel.AdGroup" Multiplicity="0..1" />
+    <End Role="AdGroup1" Type="TrainingEventRegistrationModel.AdGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdGroup">
+        <PropertyRef Name="ADGroupID" />
+      </Principal>
+      <Dependent Role="AdGroup1">
+        <PropertyRef Name="ParentGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ADGroupEmployee_AdGroup">
+    <End Role="AdGroup" Type="TrainingEventRegistrationModel.AdGroup" Multiplicity="1" />
+    <End Role="ADGroupEmployee" Type="TrainingEventRegistrationModel.ADGroupEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdGroup">
+        <PropertyRef Name="ADGroupID" />
+      </Principal>
+      <Dependent Role="ADGroupEmployee">
+        <PropertyRef Name="ADGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Catalog_Program">
+    <End Role="Program" Type="TrainingEventRegistrationModel.Program" Multiplicity="1" />
+    <End Role="Catalog" Type="TrainingEventRegistrationModel.Catalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="ProgramID" />
+      </Principal>
+      <Dependent Role="Catalog">
+        <PropertyRef Name="ProgramID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Program">
+    <End Role="Program" Type="TrainingEventRegistrationModel.Program" Multiplicity="1" />
+    <End Role="Contact" Type="TrainingEventRegistrationModel.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="ProgramID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="ProgramID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employeesignup_Occurrence">
+    <End Role="Occurrence" Type="TrainingEventRegistrationModel.Occurrence" Multiplicity="1" />
+    <End Role="Employeesignup" Type="TrainingEventRegistrationModel.Employeesignup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occurrence">
+        <PropertyRef Name="OccurrenceID" />
+      </Principal>
+      <Dependent Role="Employeesignup">
+        <PropertyRef Name="OccurrenceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Occurrence_EventType">
+    <End Role="EventType" Type="TrainingEventRegistrationModel.EventType" Multiplicity="1" />
+    <End Role="Occurrence" Type="TrainingEventRegistrationModel.Occurrence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="EventTypeID" />
+      </Principal>
+      <Dependent Role="Occurrence">
+        <PropertyRef Name="EventTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvitedEmail_TrainingEvent">
+    <End Role="TrainingEvent" Type="TrainingEventRegistrationModel.TrainingEvent" Multiplicity="1" />
+    <End Role="InvitedEmail" Type="TrainingEventRegistrationModel.InvitedEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrainingEvent">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="InvitedEmail">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvitedEmployee_TrainingEvent">
+    <End Role="TrainingEvent" Type="TrainingEventRegistrationModel.TrainingEvent" Multiplicity="0..1" />
+    <End Role="InvitedEmployee" Type="TrainingEventRegistrationModel.InvitedEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrainingEvent">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="InvitedEmployee">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InviteEmailAttachment_TrainingEvent">
+    <End Role="TrainingEvent" Type="TrainingEventRegistrationModel.TrainingEvent" Multiplicity="1" />
+    <End Role="InviteEmailAttachment" Type="TrainingEventRegistrationModel.InviteEmailAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrainingEvent">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="InviteEmailAttachment">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Occurrence_Region">
+    <End Role="Region" Type="TrainingEventRegistrationModel.Region" Multiplicity="0..1" />
+    <End Role="Occurrence" Type="TrainingEventRegistrationModel.Occurrence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="Occurrence">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Occurrence_TrainingEvent">
+    <End Role="TrainingEvent" Type="TrainingEventRegistrationModel.TrainingEvent" Multiplicity="1" />
+    <End Role="Occurrence" Type="TrainingEventRegistrationModel.Occurrence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrainingEvent">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="Occurrence">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OccurrenceReminderEmailAttachment_Occurrence">
+    <End Role="Occurrence" Type="TrainingEventRegistrationModel.Occurrence" Multiplicity="1" />
+    <End Role="OccurrenceReminderEmailAttachment" Type="TrainingEventRegistrationModel.OccurrenceReminderEmailAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occurrence">
+        <PropertyRef Name="OccurrenceID" />
+      </Principal>
+      <Dependent Role="OccurrenceReminderEmailAttachment">
+        <PropertyRef Name="OccurrenceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrainingEvent_Program">
+    <End Role="Program" Type="TrainingEventRegistrationModel.Program" Multiplicity="1" />
+    <End Role="TrainingEvent" Type="TrainingEventRegistrationModel.TrainingEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="ProgramID" />
+      </Principal>
+      <Dependent Role="TrainingEvent">
+        <PropertyRef Name="ProgramID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FullName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Branch" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OrgLevel5" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgLevel4" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgLevel3" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgLevel2" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrgNo" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OfficeCode" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeType" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title" MaxLength="38" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NetworkID" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TrainingEvents" Relationship="TrainingEventRegistrationModel.vwEmployeeTrainingEvent" FromRole="vwEmployee" ToRole="TrainingEvent" />
+  </EntityType>
+  <Association Name="vwEmployeeTrainingEvent">
+    <End Type="TrainingEventRegistrationModel.vwEmployee" Role="vwEmployee" Multiplicity="1" />
+    <End Type="TrainingEventRegistrationModel.TrainingEvent" Role="TrainingEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vwEmployee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="TrainingEvent">
+        <PropertyRef Name="CreatedByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="EventReadOnlyBindable">
+    <Property Type="Int32" Name="EventID" Nullable="false" />
+    <Property Type="String" Name="EventName" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="false" DefaultValue="Active" />
+  </ComplexType>
+</Schema>
