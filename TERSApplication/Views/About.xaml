@@ -15,7 +15,7 @@
         <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}"
                            Text="{Binding Path=ApplicationStrings.AboutPageTitle, Source={StaticResource ResourceWrapper}}"/>
         <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}"
-                           Text="About page content smmmmmh"/>
+                           Text="About page content 12332132231321h"/>
 
       </StackPanel>
 

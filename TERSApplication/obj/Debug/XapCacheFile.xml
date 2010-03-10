@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\Develop\TERSAppV2\TERSApplication\Bin\Debug\TERSApplication.xap" lastWriteTime="3/10/2010 3:26:09 PM">
-  <file source="C:\Develop\TERSAppV2\TERSApplication\obj\Debug\TERSApplication.dll" archivePath="TERSApplication.dll" lastWriteTime="3/10/2010 3:26:07 PM" />
+﻿<xapCache source="C:\Develop\TERSAppV2\TERSApplication\Bin\Debug\TERSApplication.xap" lastWriteTime="3/10/2010 3:34:09 PM">
+  <file source="C:\Develop\TERSAppV2\TERSApplication\obj\Debug\TERSApplication.dll" archivePath="TERSApplication.dll" lastWriteTime="3/10/2010 3:34:06 PM" />
   <file source="C:\Develop\TERSAppV2\TERSApplication\Libs\ActivityControl.dll" archivePath="ActivityControl.dll" lastWriteTime="2/16/2010 11:34:26 AM" />
   <file source="c:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll" archivePath="System.ComponentModel.DataAnnotations.dll" lastWriteTime="11/7/2009 7:31:36 PM" />
   <file source="C:\Develop\TERSAppV2\TERSApplication\Libs\System.Windows.Controls.Data.DataForm.Toolkit.dll" archivePath="System.Windows.Controls.Data.DataForm.Toolkit.dll" lastWriteTime="2/16/2010 11:34:26 AM" />
@@ -10,5 +10,5 @@
   <file source="c:\Program Files\Microsoft SDKs\RIA Services\v1.0\Libraries\Silverlight\System.Windows.Controls.Ria.dll" archivePath="System.Windows.Controls.Ria.dll" lastWriteTime="11/18/2009 11:12:40 PM" />
   <file source="c:\Program Files\Microsoft SDKs\RIA Services\v1.0\Libraries\Silverlight\System.Windows.Ria.dll" archivePath="System.Windows.Ria.dll" lastWriteTime="11/18/2009 11:12:40 PM" />
   <file source="c:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Data.dll" archivePath="System.Windows.Data.dll" lastWriteTime="11/7/2009 7:31:36 PM" />
-  <file source="C:\Develop\TERSAppV2\TERSApplication\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="3/10/2010 3:20:42 PM" />
+  <file source="C:\Develop\TERSAppV2\TERSApplication\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="3/10/2010 3:34:08 PM" />
 </xapCache>
